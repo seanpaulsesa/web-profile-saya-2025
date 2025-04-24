@@ -1,0 +1,508 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+    font-family: 'monserat', sans-serif;
+    overflow-x: hidden;
+    background: black;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  /* navbar */
+  
+  nav{
+    display: flex;
+    background: radial-gradient(circle at 12.8% 28%, rgb(206, 155, 243) 0%, rgb(142, 229, 247) 90%); ;
+    justify-content: space-around;/*membuat space antar object*/
+    /*padding: 20px 0;*/
+    height: 50px;
+    align-items: center;
+    color: black;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  nav .logo{
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 3px;/* jarak antar font */
+    font-size: 1.2em;
+  }
+  
+  nav ul{
+    display: flex;
+    list-style: none;/*menghilangkan titik*/
+    width: 40%;
+    justify-content: space-between;/* mengatur jarak antar ul*/
+  }
+  
+  nav ul li a{
+    color: black; 
+    text-decoration: none; /*menghilangkan garis bawah*/
+    font-size: 1em;
+  }
+  
+  
+  /* hamburger menu */
+  .menu-toggle{
+    display: none;/* flex box secara default ke samping*/
+    flex-direction: column;/*membuat flex dalam bentuk kolom*/
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+  
+  
+  }
+  
+  .menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -5px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: whitesmoke;
+    border-radius: 3px;
+    transition: all 0.5s;
+  
+  }
+  
+  /*hamburger menu animation*/
+  .menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+  
+  }
+  
+  .menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+  
+  }
+  
+  .menu-toggle input:checked ~ span:nth-child(2){
+    background-color: whitesmoke;
+    transform: rotate(45deg) translate(-1px, -1px);
+  }
+  
+  .menu-toggle input:checked ~ span:nth-child(4){
+    background-color: whitesmoke;
+    transform: rotate(-45deg) translate(-1px, 0px);
+  }
+  
+  .menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+  }
+  
+  .about, {
+    padding: 1.4rem 7%;
+  }
+  
+  /*hero section*/
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .hero::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg,rgba(1,1,3,1)3%, rgba(255,255,255,0)25%);
+  
+  }
+  
+  .hero .content{
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+    color: whitesmoke;
+  }
+  
+  .hero .content h1{
+    font-size: 5em;
+    text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+  }
+  .hero .content h1 span{
+    color: ;
+  }
+  .hero .content p{
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 100;
+    text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+    /*mix-blend-mode: difference;/*mengubah warna agar selalu dapat terbaca */
+  }
+  
+  /*hero section end*/
+  
+  /*about section start*/
+  .about, .matkul, .contact , .project{
+    padding: 7rem 7% 1.4rem;
+    color: whitesmoke;
+  }
+  
+  .about h2, .matkul h2, .contact h2, .konten h2, .project h2{
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+  }
+  
+  .about .row{
+    display: flex;
+  }
+  
+  .about .row .about-img{
+    flex: 1 1 25rem;
+  }
+  
+  .about .row .about-img img{
+    width: 100%;
+  }
+  
+  .about .row .content{
+    flex: 1 1 70rem;
+    padding: 0 1rem;
+  }
+  
+  .about .row .content h3{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about .row .content p{
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 100;
+    line-height: 1.6;
+     text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+  }
+  .about {
+    min-height: 100vh;
+    align-items: center;
+    background-image: url(img/bb.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  
+  /*about section end*/
+  
+  /*project section start*/
+  
+  .project {
+    min-height: 100vh;
+    background-image: url(img/pro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .project h2 {
+    font-size: 6rem;
+    color: #DAA520;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: black;
+  }
+  .project .bingkai .gamteng{
+    text-align: center;
+    padding: 2rem 0 ;
+  
+  }
+  .gamteng img{
+    transition-property: all;
+    transition-duration: .6s;
+    transition-timing-function: ease-in-out;
+    justify-content: center;
+  }
+  
+  .project p {
+    font-size: 1.2rem;
+    color: #FFFFE0;
+    line-height: 0;
+  }
+  
+  .gamteng img:hover{
+    transform: scale(1.1);
+  }
+  /*project section end*/
+  
+  /*matkul section start*/
+  .matkul h2, .contact h2 , .project h2{
+    margin-bottom: 1rem;
+  }
+  .matkul p, .contact p , .project p{
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-size: 100;
+    line-height: 1.6;
+  }
+  .matkul .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: center;
+  }
+  
+  .matkul .row .matkul-card{
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+  
+  .matkul .row .matkul-card img{
+    border-radius: 10%;
+    width: 80%;
+  }
+  
+  .matkul .row .matkul-card .matkul-card-title{
+    margin: 1rem auto 0.5rem;
+  }
+  
+  .matkul .row .matkul-card .matkul-card-title a {
+    text-decoration: none;
+    color: floralwhite;
+  }
+  /*animasi zoom out*/
+  .matkul-card{
+    overflow: hidden;
+  }
+  
+  .matkul-card img{
+    transition-property: all;
+    transition-duration: .6s;
+    transition-timing-function: ease-in-out;
+    justify-content: center;
+  }
+  
+  .matkul-card img:hover{
+    transform: scale(1.1);
+  }
+  /*matkul section end*/
+  
+  /*konten section start*/
+  
+  .konten{
+    padding: 2rem 7% 1.4rem;
+    color: whitesmoke;
+  }
+  
+  .konten .kone{
+    display: flex;
+  }
+  
+  .konten {
+    color: whitesmoke;
+    margin-top: 3rem;
+  }
+  
+  .konten .kone .gambar img{
+    width: 100%;
+  }
+  .konten .kone .isi{
+    flex: 1 1 60rem;
+    padding: 0 1rem;
+  }
+  
+  .konten .kone .gambar{
+    flex: 1 1 40rem;
+  }
+  
+  .konten .kone .isi ul li a{
+    text-decoration: none;
+    color: #FF4500;
+  }
+  .konten .kone .isi ul{
+    padding-left: 1rem;
+  
+  }
+  
+  /*konten section end*/
+  
+  /*contact section start*/
+  .contact .row{
+    display: flex;
+    margin-top: 2rem;
+    background-color: #222;
+  
+  }
+  
+  .contact .row .map{
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .contact .row form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  
+  .contact .row form .input-group{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: var(--bg);
+    border: 1px solid #eee;
+    padding-left: 2rem;
+  }
+  
+  .contact .row form .input-group input{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    background: none;
+    color: white;
+  }
+  
+  .contact .row form .btn{
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: white;
+    background: radial-gradient(circle at 12.8% 28%, rgb(206, 155, 243) 0%, rgb(142, 229, 247) 90%); 
+    cursor: pointer;
+  }
+  
+  /*contact section end*/
+  
+  /*footer section start*/
+  footer{
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+  }
+  
+  footer .social{
+    padding: 0rem 0;
+  }
+  
+  footer .social a:hover{
+    color: purple;
+  }
+  
+  footer .social a{
+    color: black;
+    margin: 1rem;
+  }
+  
+  footer .credit a{
+    text-decoration: none;
+  
+    
+  }
+  /*footer section end*/
+  
+  
+  /*responsive breakpoint */
+  
+  /*ukuran tablet */
+  @media screen and (max-width: 768px){
+    nav ul{
+      width: 60%;
+    }
+    html{
+      font-size: 70.5%;
+    }
+  
+    .about .row{
+      flex-wrap: wrap;
+    }
+  
+    .about .row .about-img img {
+      height: 40rem;
+      object-fit: cover;/*biar tidak tertarik*/
+      object-position: top;
+    }
+  
+    .about .row .content {
+      padding: 0;
+  
+    }
+  
+    .about .row .content h3{
+      margin-top: 1rem;
+    }
+  /*ukuran mobile */
+  @media screen and (max-width: 576px){
+    html{
+      font-size: 69%;
+    }
+  
+    .matkul p{
+      font-size: 1.2rem;
+  
+    }
+  
+    .body{
+  
+    }
+    .menu-toggle{
+      display: flex;
+    }
+    nav ul{
+      font-size: 1.3rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100vh;
+      justify-content: space-evenly;
+      flex-direction: column;
+      align-items: center;
+      background: radial-gradient(circle at 12.8% 28%, rgb(206, 155, 243) 0%, rgb(142, 229, 247) 90%); 
+      z-index: -1;
+      width: 50%;
+      transform: translateX(100%);
+      transition: all 1s;
+      opacity: 1;
+    }
+  
+    nav ul.slide{
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .contact .row{
+      flex-wrap: wrap;
+    }
+  
+    .contact .row .map{
+      height: 30rem;
+    }
+  
+    .contact .row form{
+      padding-top: 0;
+    }
+  }
+  
